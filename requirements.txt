@@ -1,0 +1,24 @@
+# --extra-index-url https://download.pytorch.org/whl/cu118
+
+# --- Deep Learning Core (With NVIDIA CUDA GPU Support) ---
+# This ensures PyTorch uses your GTX 1650 for massive speedups instead of the slow CPU.
+# torch
+# torchvision
+# torchaudio
+
+# Download GPU version of torch, torchvision, torchaudio
+# pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+
+# --- Data Processing & Tokenization ---
+# Used to download TinyStories
+datasets
+# Used to convert English words into numeric tokens (OpenAI's GPT-2 tokenizer)
+tiktoken
+# Used for fast mathematical matrix operations
+numpy
+
+# --- Utilities & Visualization ---
+# Used to draw the training loss and accuracy graphs
+matplotlib
+# Used to show the progress bar during training loops
+tqdm
