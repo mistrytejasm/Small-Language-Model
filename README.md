@@ -88,3 +88,14 @@ Even at 43% accuracy, the SLM is capable of generating fully coherent, grammatic
 > When he got to the boy, he asked the boy, 'What are you for your way to play in the woods? Maybe you can use it to find it!'
 > The little boy was very excited and he smiled at the small boy. He asked the boy why he couldn't find it. The boy looked at the little boy and said, 'It's time to go home soon!'
 > The boy smiled and said, 'Yes, it's so good to get to the little girl!' The little boy smiled and said, 'Of course'"
+
+#### Analysis of the Generated Story
+While the model perfectly understands English grammar, punctuation conventions, and thematic consistency (boys, playing, woods), it exhibits a common symptom of early-stage training: **repetition** (e.g., heavily overusing the phrase *"so excited!"* and *"smiled"*). 
+
+This occurs because at 43% next-token accuracy, the AI has learned the structural *rules* of language, but still lacks deep predictive "imagination." Therefore, it defaults to the most statistically safe and common words in its dataset to avoid making sequential errors.
+
+#### How to Improve Performance
+To dramatically scale the reasoning and creative capabilities of this SLM, the following steps can be taken:
+1. **Extended Training:** The current model was only trained for 20,000 steps. Increasing `max_iters` in `config.py` to `100,000` or beyond will allow the model to fully converge on the dataset logic.
+2. **Scale Parameters:** The current architecture is a highly constrained ~49M parameter model optimized for a 4GB VRAM GPU. Scaling `n_layer`, `n_head`, and `n_embd` inside `config.py` will increase the artificial "brain size" of the model, enabling it to learn far more complex linguistic patterns (requires GPUs with 16GB+ VRAM).
+3. **Hyperparameter Tuning:** Adjusting the dropout rate, modifying the adaptive learning rate (`min_lr` and `factor`), and expanding the `block_size` context window will yield smarter contextual generation.
