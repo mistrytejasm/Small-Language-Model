@@ -2,3 +2,5 @@ __pycache__
 .venv
 models/
 data/
+extracted_notebook.py
+*.ipynb
