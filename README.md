@@ -1,6 +1,6 @@
 # Small Language Model (SLM) from Scratch
 
-Welcome to your custom Small Language Model! This project is a fully-modular, production-ready extraction of a Transformer neural network pipeline. It is specifically designed and hyper-parameter optimized to train successfully on consumer hardware like an NVIDIA GTX 1650 (4GB VRAM) without crashing.
+A complete, fully modular PyTorch implementation of a Small Language Model (SLM) built from scratch. Features a custom Transformer architecture, memory-mapped dataloading, mixed-precision training, and an end-to-end inference pipeline optimized for consumer hardware (e.g., GTX 1650 4GB VRAM).
 
 ## Project Structure
 
@@ -17,8 +17,16 @@ The files are designed to be understood and executed in the following chronologi
 
 ## Step-by-Step Setup Guide
 
+### Step 0: Clone the Repository
+Open your terminal and clone this project to your local machine:
+
+```bash
+git clone https://github.com/mistrytejasm/Small-Language-Model.git
+cd Small-Language-Model
+```
+
 ### Step 1: Install Dependencies
-Open your terminal in this folder and install the required libraries. The `requirements.txt` file is specially configured to grab the CUDA (GPU-accelerated) version of PyTorch.
+Ensure you are in the project folder and install the required libraries. The `requirements.txt` file is specially configured to grab the CUDA (GPU-accelerated) version of PyTorch.
 
 ```bash
 pip install -r requirements.txt
